@@ -10,14 +10,14 @@
 
 @font-face {
   font-family: "Bold";
-  src: url("./font/Poppins-Bold.ttf");
+  src: url("./assets/font/Poppins-Bold.ttf");
 }
 @font-face {
   font-family: "ExtraLight";
-  src: url("./font/Poppins-ExtraLight.ttf");
+  src: url("./assets/font/Poppins-ExtraLight.ttf");
 }
 @font-face {
   font-family: "Medium";
-  src: url("./font/Poppins-Medium.otf");
+  src: url("./assets/font/Poppins-Medium.otf");
 }
 </style>
