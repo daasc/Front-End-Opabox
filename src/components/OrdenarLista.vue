@@ -1,11 +1,16 @@
 <template>
   <div class="ordenar_lista">
     <h3 class="ordenar_lista__titulo">Ordenar Lista</h3>
-    <div class="ordenar_lista__salaS">
-      SalaS: {{ listas.salaS }}
-    </div>
-    <div class="ordenar_lista__salaN">
-      SalaN: {{ listas.salaN }}
+    <div class="flex">
+      <div>
+        <p class="ordenar_lista__salaS">
+          SalaS: {{ listas.salaS }}
+        </p>
+        <p class="ordenar_lista__salaN">
+          SalaN: {{ listas.salaN }}
+        </p>
+      </div>
+      <span @click.prevent="limparListas()" class="limpar_listas">Limpar Listas</span>
     </div>
     <hr>
     <form action="">
@@ -107,6 +112,10 @@ export default {
     limparCampoSalaN() {
       this.itemSalaN = Number;
     },
+    limparListas() {
+      this.listas.salaN = [];
+      this.listas.salaS = [];
+    },
   },
 };
 </script>
@@ -122,6 +131,14 @@ export default {
   .btn {
     margin-top: 10px;
     margin-left: 10px;
+  }
+  .flex {
+    display: flex;
+    justify-content: space-between;
+    .limpar_listas {
+      color:#B40404 ;
+      cursor: pointer;
+    }
   }
 }
 </style>

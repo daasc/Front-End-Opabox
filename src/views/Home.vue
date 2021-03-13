@@ -41,20 +41,20 @@
     <section class="lista_testes">
       <card
         nomeTeste="listaOrdenada"
-        :class="{opacity: !interlaceAtivado}"
+        :class="{opacity: interlaceAtivado}"
       >
         <h2 slot="header">Ordenar Lista</h2>
       </card>
       <card
         nomeTeste="interlace"
-        :class="{opacity: interlaceAtivado}"
+        :class="{opacity: !interlaceAtivado}"
       >
         <h2 slot="header">Interlace</h2>
       </card>
     </section>
     <main class="conteudo">
-      <ordenar-lista v-if="interlaceAtivado" />
-      <interlace v-else />
+      <interlace v-if="interlaceAtivado" />
+      <ordenar-lista v-else />
     </main>
   </div>
 </template>
@@ -75,10 +75,10 @@ export default {
   },
   methods: {
     ativarInterlace() {
-      this.interlaceAtivado = false;
+      this.interlaceAtivado = true;
     },
     ativarOrdenaLista() {
-      this.interlaceAtivado = true;
+      this.interlaceAtivado = false;
     },
   },
 };
