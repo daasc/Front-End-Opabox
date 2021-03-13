@@ -1,51 +1,55 @@
+$color-button-default: #888888;
+$color-button-into: #ffa534;
+$color-font-button: #ffffff;
+
 input[type="number"],
 input[type="text"] {
-  padding: 9px;
-  font-size: 16px;
+  background-color: #ffffff;
   border-width: 1px;
   border-color: #cccccc;
-  background-color: #ffffff;
   border-style: solid;
   border-radius: 5px;
   box-shadow: 0px 0px 0px rgba(66, 66, 66, 0.75);
+  font-size: 16px;
+  padding: 9px;
   text-shadow: 0px 0px 0px rgba(66, 66, 66, 0.75);
   outline: none;
 }
 
 .btn {
+  background-color: $color-button-default;
+  background-color: transparent;
   border-width: 2px;
   border-radius: 8px;
-  background-color: transparent;
-  font-weight: 400;
-  padding: 8px 16px;
-  border: 1px solid #888888;
-  color: #ffffff;
-  background-color: #888888;
+  border: 1px solid $color-button-default;
+  color: $color-font-button;
   cursor: pointer;
-  margin-bottom: 5px;
+  font-weight: 400;
   font-size: 0.875rem;
   line-height: 1.42857143;
+  margin-bottom: 5px;
+  padding: 8px 16px;
 }
 
 .log_into {
-  border: 1px solid #ffa534;
-  color: #ffffff;
-  background-color: #ffa534;
+  background-color: $color-button-into;
+  border: 1px solid $color-button-into;
+  color: $color-font-button;
   cursor: pointer;
 }
 form {
   margin: 0 auto;
   width: 50%;
   .grup-input {
+    align-items: center;
     display: flex;
     justify-content: space-around;
-    align-items: center;
     margin-bottom: 5px;
     .button_add {
-      margin-left: 10px;
       cursor: pointer;
       color: #0489b1;
       font-weight: bold;
+      margin-left: 10px;
     }
   }
   .btn {
@@ -69,8 +73,8 @@ form {
 @media screen and (min-width: 10px) {
   .ordenar_lista,
   .interlace {
-    width: 90%;
     margin-bottom: 20px;
+    width: 90%;
   }
   form {
     width: 100%;
@@ -89,7 +93,7 @@ form {
 
 @media screen and (min-width: 1000px) {
   form {
-    width: 50%;
+    width: 55%;
   }
   .ordenar_lista,
   .interlace {

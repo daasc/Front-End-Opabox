@@ -8,14 +8,14 @@ export default {
   name: 'Footer',
 };
 </script>
-<style lang="scss">
+<style lang="scss" scoped>
 $color-primary: #373435;
 
 .footer {
   background-color: $color-primary;
   height: 70px;
-  width: 100%;
   text-align: center;
+  width: 100%;
   p {
     color: white;
     font-size: 18px;

@@ -48,20 +48,18 @@
     <div v-if="result.listas">
       <hr>
       <h3 class="ordenar_lista__titulo">Resultado:</h3>
-      <div class="ordenar_lista__salaN">
-        SalaN: {{ result.listas.salaN }}
-      </div>
       <div class="ordenar_lista__salaS">
         SalaS: {{ result.listas.salaS }}
       </div>
+      <div class="ordenar_lista__salaN">
+        SalaN: {{ result.listas.salaN }}
+      </div>
     </div>
   </div>
-<!-- <div>
-  <h1>dasdasd</h1>
-</div> -->
 </template>
 <script>
 import { mapState } from 'vuex';
+import Swal from 'sweetalert2';
 
 export default {
   name: 'OrdenarLista',
@@ -96,7 +94,11 @@ export default {
         };
         await this.$store.dispatch('ordenarLista/ordenar', data);
       } catch (error) {
-        console.log(error);
+        Swal.fire({
+          icon: 'error',
+          title: 'Error',
+          text: error,
+        });
       }
     },
     limparCampoSalaS() {
@@ -108,7 +110,7 @@ export default {
   },
 };
 </script>
-<style lang="scss" >
+<style lang="scss" scoped>
 .ordenar_lista {
   hr {
     border-color: #f2f2f2;
@@ -116,6 +118,10 @@ export default {
   .ordenar_lista__salaS,
   .ordenar_lista__salaN {
     margin: 10px 0;
+  }
+  .btn {
+    margin-top: 10px;
+    margin-left: 10px;
   }
 }
 </style>

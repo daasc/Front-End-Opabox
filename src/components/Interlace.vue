@@ -31,6 +31,7 @@
 </template>
 <script>
 import { mapState } from 'vuex';
+import Swal from 'sweetalert2';
 
 export default {
   name: 'Interlace',
@@ -51,15 +52,21 @@ export default {
   methods: {
     async verificar() {
       try {
-        this.query.intervaloA.push(this.valorIntervaloA.slice(0, 2));
-        this.query.intervaloA.push(this.valorIntervaloA.slice(2, 4));
-        this.query.intervaloB.push(this.valorIntervaloB.slice(0, 2));
-        this.query.intervaloB.push(this.valorIntervaloB.slice(2, 4));
-        await this.$store.dispatch('interlace/verificar', this.query);
-        this.limpar();
-        this.mostrarResultado = true;
+        if (this.valorIntervaloA && this.valorIntervaloB) {
+          this.query.intervaloA.push(this.valorIntervaloA.slice(0, 2));
+          this.query.intervaloA.push(this.valorIntervaloA.slice(2, 4));
+          this.query.intervaloB.push(this.valorIntervaloB.slice(0, 2));
+          this.query.intervaloB.push(this.valorIntervaloB.slice(2, 4));
+          await this.$store.dispatch('interlace/verificar', this.query);
+          this.limpar();
+          this.mostrarResultado = true;
+        }
       } catch (error) {
-        console.log(error);
+        Swal.fire({
+          icon: 'error',
+          title: 'Error',
+          text: error,
+        });
       }
     },
     limpar() {
@@ -69,7 +76,7 @@ export default {
   },
 };
 </script>
-<style lang="scss">
+<style lang="scss" scoped>
 .interlace {
   .interlace__titulo {
     margin-bottom: 10px;
@@ -78,9 +85,9 @@ export default {
     margin: 5px 0;
   }
   form {
-    padding: 5px;
     display: flex;
     flex-direction: column;
+    padding: 5px;
     .btn {
       margin-top: 5px;
     }

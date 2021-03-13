@@ -7,14 +7,14 @@
 export default {
   name: 'Card',
   props: {
-    teste: {
+    nomeTeste: {
       type: String,
       require: true,
     },
   },
   methods: {
     active() {
-      if (this.teste === 'interlace') {
+      if (this.nomeTeste === 'interlace') {
         this.$parent.ativarInterlace();
       } else {
         this.$parent.ativarOrdenaLista();
@@ -23,18 +23,18 @@ export default {
   },
 };
 </script>
-<style lang="scss">
+<style lang="scss" scoped>
 .card {
-  width: 300px;
-  min-height: 60px;
-  font-family: "Bold";
   background: #373435;
-  cursor: pointer;
-  text-align: center;
-  margin-bottom: 10px;
-  color: white;
-  padding: 10px;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  color: white;
+  cursor: pointer;
+  font-family: "Bold";
+  min-height: 60px;
+  margin-bottom: 10px;
+  padding: 10px;
+  text-align: center;
+  width: 300px;
   h2 {
     font-size: 1.5rem;
     padding: 15px;
