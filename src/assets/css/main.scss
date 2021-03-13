@@ -1,0 +1,98 @@
+input[type="number"],
+input[type="text"] {
+  padding: 9px;
+  font-size: 16px;
+  border-width: 1px;
+  border-color: #cccccc;
+  background-color: #ffffff;
+  border-style: solid;
+  border-radius: 5px;
+  box-shadow: 0px 0px 0px rgba(66, 66, 66, 0.75);
+  text-shadow: 0px 0px 0px rgba(66, 66, 66, 0.75);
+  outline: none;
+}
+
+.btn {
+  border-width: 2px;
+  border-radius: 8px;
+  background-color: transparent;
+  font-weight: 400;
+  padding: 8px 16px;
+  border: 1px solid #888888;
+  color: #ffffff;
+  background-color: #888888;
+  cursor: pointer;
+  margin-bottom: 5px;
+  font-size: 0.875rem;
+  line-height: 1.42857143;
+}
+
+.log_into {
+  border: 1px solid #ffa534;
+  color: #ffffff;
+  background-color: #ffa534;
+  cursor: pointer;
+}
+form {
+  margin: 0 auto;
+  width: 50%;
+  .grup-input {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 5px;
+    .button_add {
+      margin-left: 10px;
+      cursor: pointer;
+      color: #0489b1;
+      font-weight: bold;
+    }
+  }
+  .btn {
+    width: 40%;
+  }
+}
+
+.ordenar_lista,
+.interlace {
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  margin: auto;
+  padding: 15px;
+  width: 50%;
+}
+.ordenar_lista__titulo,
+.interlace__titulo {
+  font-size: 1.7rem;
+  font-family: "Medium";
+  text-align: center;
+}
+@media screen and (min-width: 10px) {
+  .ordenar_lista,
+  .interlace {
+    width: 90%;
+    margin-bottom: 20px;
+  }
+  form {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 700px) {
+  .ordenar_lista,
+  .interlace {
+    width: 70%;
+  }
+  form {
+   width: 60%;
+ }
+}
+
+@media screen and (min-width: 1000px) {
+  form {
+    width: 50%;
+  }
+  .ordenar_lista,
+  .interlace {
+    width: 40%;
+  }
+}
